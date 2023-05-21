@@ -8,7 +8,7 @@ const Navbar = () => {
         <Box boxShadow={'xl'} bgColor={'white'} position={'sticky'} top={'0'} zIndex={'10'}>
             <Container display={'flex'} maxW={'container.xl'} justifyContent={'space-between'} alignItems={'center'} p={'3'}>
                 <Box>
-                    <Heading >Shop.com</Heading>
+                    <Heading color={'#2B6CB0'} >Shop.com</Heading>
                 </Box>
                 <Box  display={'flex'} alignItems={'center'}>
                     <Text px={'2'}>Home</Text>
