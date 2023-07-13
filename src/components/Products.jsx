@@ -2,6 +2,7 @@ import { Card, Container, Flex,CardBody, Image, Stack, Heading,Text, CardFooter,
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {fetchProducts, STATUS} from '../store/productSlice'
+import { addCart } from '../store/cartSlice'
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -10,7 +11,9 @@ const Products = () => {
 useEffect(()=>{
   dispatch(fetchProducts());
 },[])
-
+const handleAdd = (product) =>{
+  dispatch(addCart(product))
+}
   return (
     <Container maxW={'container.lg'}>
 <Flex flexWrap={'wrap'} justify={'center'} gap={'2'} >
@@ -25,7 +28,7 @@ useEffect(()=>{
           <Text>{product.price}</Text>
         </Stack>
         <CardFooter>
-          <Button colorScheme='blue'>Add to cart</Button>
+          <Button colorScheme='blue' onClick={()=>handleAdd(product)}>Add to cart</Button>
         </CardFooter>
     </Card>
     ))
